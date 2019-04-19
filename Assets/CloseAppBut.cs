@@ -18,4 +18,8 @@ public class CloseAppBut : MonoBehaviour
     {
         
     }
+    public void CloseApp()
+    {
+        Application.Quit();
+    }
 }

@@ -10,12 +10,13 @@ public class Bola : MonoBehaviour {
     public Vector3 velocidad;
     protected Rigidbody rb;
     protected Vector3 initialPos;
-    public LineRenderer lr;
+    private LineRenderer lr;
     public Material[] lineMarterial;
     public AudioClip[] sonidos;
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        lr = GetComponent<LineRenderer>();
         initialPos = transform.position;
 	}
 	// Update is called once per frame
@@ -94,10 +95,6 @@ public class Bola : MonoBehaviour {
     public void CrearBola()
     {
         Instantiate(ballPrefab, new Vector3(rb.position.x, rb.position.y + 0.3f, rb.position.z), new Quaternion(0, 0, 0, 0));
-    }
-    public void CerrarAplicacion()
-    {
-        Application.Quit();
     }
     public void ReproducirSonidoColision()
     {
