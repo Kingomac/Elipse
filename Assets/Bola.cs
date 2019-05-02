@@ -8,8 +8,8 @@ public class Bola : MonoBehaviour {
     public GameObject ballPrefab;
     public InputField[] vo;
     public Vector3 velocidad;
-    protected Rigidbody rb;
-    protected Vector3 initialPos;
+    public Rigidbody rb;
+    public Vector3 initialPos;
     private LineRenderer lr;
     public Material[] lineMarterial;
     public AudioClip[] sonidos;
@@ -17,15 +17,12 @@ public class Bola : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
+        FindObjectOfType<ParticleSystem>().Stop();
         initialPos = transform.position;
 	}
-	// Update is called once per frame
-	void Update () {
-        if (rb.position.y < -12)
-        {
-            rb.transform.position = new Vector3(initialPos.x, initialPos.y, initialPos.z);
-            rb.velocity = new Vector3(0, 0, 0);
-        }
+    // Update is called once per frame
+    void Update()
+    {
         try
         {
             velocidad = new Vector3(System.Convert.ToSingle(vo[0].text), 0, System.Convert.ToSingle(vo[1].text));
@@ -52,9 +49,13 @@ public class Bola : MonoBehaviour {
 	}
     private void OnBecameInvisible()
     {
+        ResetPosicion();
+    }
+    private void ResetPosicion()
+    {
+        rb.velocity = new Vector3(0, 0, 0);
         rb.transform.position = initialPos;
     }
-
     public void Actuar()
     {
         rb.AddForce(velocidad);
@@ -116,10 +117,6 @@ public class Bola : MonoBehaviour {
         if (velocidad != new Vector3(0, 0, 0))
         {
             ReproducirSonidoColision();
-        }
-        if(collision.gameObject.name == "Cube")
-        {
-            rb.transform.position = initialPos;
         }
     }
 }

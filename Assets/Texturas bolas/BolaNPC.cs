@@ -34,9 +34,9 @@ public class BolaNPC : MonoBehaviour
         }
         a.clip = audios[UnityEngine.Random.Range(0, audios.Length)];
         a.Play();
-        if(collision.gameObject.name == "Cube")
+        /*if(collision.gameObject.name == "Cube")
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 }
