@@ -63,12 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Bola.cs" />
-    <Compile Include="Assets\CameraAction.cs" />
     <Compile Include="Assets\CloseAppBut.cs" />
     <Compile Include="Assets\EmitParticles.cs" />
-    <Compile Include="Assets\mesa\Mesa.cs" />
     <Compile Include="Assets\Texturas bolas\BolaNPC.cs" />
-    <Compile Include="Assets\TrailPath.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>X:/Projects/Unity/Elipse/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

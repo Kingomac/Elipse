@@ -777,7 +777,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1042756427}
   - component: {fileID: 1042756426}
-  - component: {fileID: 1042756428}
   - component: {fileID: 1042756429}
   - component: {fileID: 1042756430}
   m_Layer: 0
@@ -846,18 +845,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 33.931, y: -0.133, z: -0.038000003}
---- !u!114 &1042756428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042756425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8a62783ed14c9418df3a05ddb6ab42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1042756429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042756425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -768656878, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1893,7 +1880,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1761933032}
   - component: {fileID: 1761933034}
-  - component: {fileID: 1761933033}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -1915,19 +1901,6 @@ Transform:
   m_Father: {fileID: 1690457948}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1761933033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761933031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b2b4ce282aa9f44b0cf91067e46658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: []
 --- !u!96 &1761933034
 TrailRenderer:
   serializedVersion: 2
@@ -1974,8 +1947,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.004535675
-        value: 0.029996872
+        time: 0.0009689331
+        value: 0.04537773
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2058,7 +2031,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763593060}
   m_Material: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: ed24fadbdfe02694a806a9e661158fb6, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1763593062
@@ -3362,8 +3335,66 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 0
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 0
+      repeatInterval: 0.01
+      probability: 0
   SizeModule:
     enabled: 0
     curve:
